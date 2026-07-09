@@ -1,13 +1,10 @@
 /*
- * mm-naive.c - The fastest, least memory-efficient malloc package.
- * 
- * In this naive approach, a block is allocated by simply incrementing
- * the brk pointer.  A block is pure payload. There are no headers or
- * footers.  Blocks are never coalesced or reused. Realloc is
- * implemented directly using mm_malloc and mm_free.
+ * mm.c - Explicit free-list malloc implementation.
  *
- * NOTE TO STUDENTS: Replace this header comment with your own header
- * comment that gives a high level description of your solution.
+ * This allocator stores block size/allocation metadata in headers and
+ * footers, maintains reusable free blocks in an explicit doubly linked
+ * free list, splits oversized blocks on placement, coalesces adjacent
+ * free blocks, and handles realloc through in-place growth when possible.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,17 +15,13 @@
 #include "mm.h"
 #include "memlib.h"
 
-/*********************************************************
- * NOTE TO STUDENTS: Before you do anything else, please
- * provide your team information in the following struct.
- ********************************************************/
 team_t team = {
     /* Team name */
-    "ateam",
+    "sentoayaka",
     /* First member's full name */
-    "Harry Bovik",
+    "sentoayaka",
     /* First member's email address */
-    "bovik@cs.cmu.edu",
+    "",
     /* Second member's full name (leave blank if none) */
     "",
     /* Second member's email address (leave blank if none) */
@@ -524,7 +517,6 @@ void mm_checkheap(int verbose) {
     if (free_count_heap != free_count_list)
         printf("Error: list count (%d) != heap count (%d)\n", free_count_list, free_count_heap);
 }
-
 
 
 
