@@ -6,14 +6,14 @@
 
 这是我学习 CMU 15-213 / CS:APP 过程中整理的系统编程作品集。对应的本地学习内容覆盖数据表示、汇编、cache 行为、动态内存分配、Unix shell job control 和 HTTP proxy。
 
-这个公开仓库刻意做成 portfolio report，而不是完整 lab solution dump。它说明我的设计思路、测试方式和系统能力，同时避免公开课程 handout 和完整答案。
+这个公开仓库包含两部分：`docs/` 中的中英双语项目说明，以及 `code/` 中我实现的核心源码。为了保持仓库干净，我没有搬运整套课程 handout、PDF、二进制程序、trace 数据和编译产物。
 
 ## 项目覆盖
 
-- [Malloc Lab](docs/malloc-lab.md)：显式空闲链表 allocator，支持 split、coalesce、realloc 和 heap consistency check。
-- [Cache Lab](docs/cache-lab.md)：cache simulator 与矩阵转置 cache 优化。
-- [Shell Lab](docs/shell-lab.md)：支持前后台任务、信号转发和 job 状态迁移的 Unix shell。
-- [Proxy Lab](docs/proxy-lab.md)：HTTP proxy，请求解析、并发处理和对象缓存。
+- [Malloc Lab](docs/malloc-lab.md)：显式空闲链表 allocator，源码见 [code/malloc/mm.c](code/malloc/mm.c)。
+- [Cache Lab](docs/cache-lab.md)：cache simulator 与矩阵转置 cache 优化，源码见 [code/cache](code/cache)。
+- [Shell Lab](docs/shell-lab.md)：支持前后台任务、信号转发和 job 状态迁移的 Unix shell，源码见 [code/shell/tsh.c](code/shell/tsh.c)。
+- [Proxy Lab](docs/proxy-lab.md)：HTTP proxy，请求解析、并发处理和对象缓存，源码见 [code/proxy](code/proxy)。
 
 ## 能力展示
 
@@ -38,20 +38,20 @@
 
 ## 学术诚信说明
 
-本仓库不镜像原始课程 handout 和完整答案文件，只公开我自己的项目说明、设计总结和学习结果。
+本仓库公开我实现的核心源码和项目说明，但不镜像原始课程 handout、PDF、二进制程序、trace 数据和编译产物。
 
 ## English Version
 
 This repository is a systems-programming portfolio based on my CMU 15-213 / CS:APP study work. My local work covered data representation, assembly, cache behavior, dynamic memory allocation, Unix shell job control, and HTTP proxy programming.
 
-The public repository is intentionally a portfolio report rather than a full lab-solution dump. It explains my design choices, testing strategy, and systems concepts while respecting academic-integrity boundaries.
+The public repository contains two parts: bilingual project reports under `docs/` and my core source files under `code/`. To keep the repository clean, I did not mirror full course handouts, PDFs, binaries, trace data, or build artifacts.
 
 ## Covered Projects
 
-- [Malloc Lab](docs/malloc-lab.md): explicit free-list allocator with splitting, coalescing, realloc handling, and heap consistency checks.
-- [Cache Lab](docs/cache-lab.md): cache simulator and matrix-transpose cache optimization.
-- [Shell Lab](docs/shell-lab.md): Unix shell with foreground/background jobs, signal forwarding, and job-state transitions.
-- [Proxy Lab](docs/proxy-lab.md): HTTP proxy with request parsing, concurrency, and object caching.
+- [Malloc Lab](docs/malloc-lab.md): explicit free-list allocator; source: [code/malloc/mm.c](code/malloc/mm.c).
+- [Cache Lab](docs/cache-lab.md): cache simulator and matrix-transpose cache optimization; source: [code/cache](code/cache).
+- [Shell Lab](docs/shell-lab.md): Unix shell with foreground/background jobs, signal forwarding, and job-state transitions; source: [code/shell/tsh.c](code/shell/tsh.c).
+- [Proxy Lab](docs/proxy-lab.md): HTTP proxy with request parsing, concurrency, and object caching; source: [code/proxy](code/proxy).
 
 ## Skills Demonstrated
 
@@ -69,4 +69,4 @@ This work demonstrates the systems side of my preparation: I am comfortable read
 
 ## Academic Integrity
 
-The original course handouts and full solution files are not mirrored here. This repository summarizes my implementation approach and learning outcomes without publishing complete answers for active course labs.
+This repository publishes my core source files and project reports, while excluding original course handouts, PDFs, binaries, trace data, and build artifacts.
